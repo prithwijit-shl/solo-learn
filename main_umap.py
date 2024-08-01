@@ -49,7 +49,18 @@ def main():
         .backbone
     )
     # prepare data
-    train_loader, val_loader = prepare_data(
+    # train_loader, val_loader = prepare_data(
+    #     args.dataset,
+    #     train_data_path=args.train_data_path,
+    #     # val_data_path=args.val_data_path,
+    #     data_format=args.data_format,
+    #     batch_size=args.batch_size,
+    #     num_workers=args.num_workers,
+    #     auto_augment=False,
+    # )
+
+
+    train_loader = prepare_data(
         args.dataset,
         train_data_path=args.train_data_path,
         val_data_path=args.val_data_path,
@@ -65,8 +76,8 @@ def main():
     device = "cuda:0"
     model = model.to(device)
 
-    umap.plot(device, model, train_loader, "im100_train_umap.pdf")
-    umap.plot(device, model, val_loader, "im100_val_umap.pdf")
+    umap.plot(device, model, train_loader, "train_umap.pdf")
+    # umap.plot(device, model, val_loader, "val_umap.pdf")
 
 
 if __name__ == "__main__":

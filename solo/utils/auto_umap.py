@@ -30,7 +30,7 @@ import pandas as pd
 import seaborn as sns
 import torch
 import torch.nn as nn
-import umap
+import umap.umap_ as umap
 from lightning.pytorch.callbacks import Callback
 from matplotlib import pyplot as plt
 from omegaconf import DictConfig
@@ -260,6 +260,9 @@ class OfflineUMAP:
         # set module to eval model and collect all feature representations
         model.eval()
         with torch.no_grad():
+            for item in dataloader:
+                print("item is" , item)
+                break
             for x, y in tqdm(dataloader, desc="Collecting features"):
                 x = x.to(device, non_blocking=True)
                 y = y.to(device, non_blocking=True)
