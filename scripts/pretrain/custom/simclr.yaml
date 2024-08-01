@@ -21,7 +21,7 @@ method_kwargs:
   temperature: 0.2
 data:
   dataset: custom
-  train_path: "simclr_dataset"
+  train_path: "/glb/hou/pt.sgs/data/ml_ai_us/uspcjc/preprocessing/new/images"
   format: "image_folder"
   num_workers: 4
   no_labels: True
@@ -46,7 +46,7 @@ auto_resume:
 
 # overwrite PL stuff
 max_epochs: 400
-devices: [0, 1, 2, 3]
+devices: [0]  #[0,1,2,3]
 sync_batchnorm: True
 accelerator: "gpu"
 strategy: "ddp"
