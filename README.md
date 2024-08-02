@@ -5,7 +5,8 @@ For pretraining the backbone edit [simclr.yaml](scripts/pretrain/custom/simclr.y
 ```
 train_path: "/PATH/TO/DATASET/images" #remember to link only the images folder since this is no label training
 ```
-
+Then run:
+```
 python3 main_pretrain.py \
     # path to training script folder
     --config-path scripts/pretrain/custom/ \
