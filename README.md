@@ -1,9 +1,11 @@
 
 ## Training
 
-For pretraining the backbone, follow one of the many bash files in `scripts/pretrain/`.
-We are now using [Hydra](https://github.com/facebookresearch/hydra) to handle the config files, so the common syntax is something like:
-```bash
+For pretraining the backbone edit [simclr.yaml](scripts/pretrain/custom/simclr.yaml) Mainly update the train_path 
+``
+train_path: "/PATH/TO/DATASET/images" #remember to link only the images folder since this is no label training
+``
+
 python3 main_pretrain.py \
     # path to training script folder
     --config-path scripts/pretrain/custom/ \
