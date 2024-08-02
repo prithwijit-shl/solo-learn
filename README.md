@@ -16,3 +16,5 @@ python3 main_pretrain.py \
     # by doing ++new_argument=VALUE
     # pytorch lightning's arguments can be added here as well.
 ```
+### Trained checkpoint for DeeplabV3+ backbone
+The trained backbone checkpoint will be stored in folder ``trained_models`` in ``.ckpt`` format. Copy this path to add for loading checkpoint in DeeplabV3 backbone. 
